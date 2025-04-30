@@ -28,4 +28,6 @@ class TransformerEncoder(torch.nn.Module):
     out = self.linear(x)
     out = self.dropout(out)
     out = self.norm2(out + x)
+
+    
     return out.transpose(0, 1)  # (batch, seq_len, embed_dim)

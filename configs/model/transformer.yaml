@@ -1,0 +1,11 @@
+name: "transformer"
+params:
+  max_len: 145
+  min_freq: 2
+  embed_dim: 200
+  dense_dim: 512
+  num_heads: 10
+  num_layers: 2
+  dropout: 0.3
+  isParent: False #False because this is not useful for transformers 
+  clip_grad: True 

@@ -2,7 +2,7 @@ import torch
 from typing import List
 
 
-class SarcasmDatasetAll(torch.utils.data.Dataset):
+class SarcasmDataset(torch.utils.data.Dataset):
   def __init__(self, text: List[str], label: List[int], vectorizer, main_text: List[str] = None, is_parent = False) -> None:
 
     """
@@ -41,6 +41,6 @@ class SarcasmDatasetAll(torch.utils.data.Dataset):
     
     return (
             torch.tensor(vectorised, dtype=torch.long),
-            torch.tensor(vectorised_main, dtype=torch.long) if vectorised_main is not None else None,
+            torch.tensor(vectorised_main, dtype=torch.long) if vectorised_main is not None else torch.zeros_like(torch.tensor(vectorised, dtype=torch.long)),
             torch.tensor(label, dtype=torch.long)
         )

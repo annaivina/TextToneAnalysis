@@ -1,6 +1,6 @@
 import torch
-from customEmbed import CustomEmbedding
-from Transformer import TransformerEncoder
+from src.models.customEmbed import CustomEmbedding
+from src.models.Transformer import TransformerEncoder
 
 
 class SarcasmTransformer(torch.nn.Module):

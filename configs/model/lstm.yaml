@@ -1,0 +1,10 @@
+name: "lstm"
+params:
+  embed_dim: 100 #100 for parent comments together  and 50 for main
+  hidden_size: 100 # 50 for main and will double because its Bidirectional LSTM for parent comments together: 100 
+  clip_grad: False #This usually for the transformers to remove exploiding gradients 
+  multiplier: 4 # 2 for lstm with main comment and 4 for lstm with + parent commnet (otherwise dims will be wrong)
+  dropout: 0.5
+  max_len: 127 #if no parent comments are added; 125+2 if parents are added and 145_2 for transformer model
+  min_freq: 2
+  isParent: True #this is responsible for including parent comment into the trainning. If True change the max_len

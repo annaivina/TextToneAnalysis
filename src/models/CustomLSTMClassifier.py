@@ -2,18 +2,18 @@ import torch
 
 
 class SarcasmClassifier(torch.nn.Module):
-  def __init__(self, embed_size, embed_dim, hidden_size, is_parent=False):
+  def __init__(self, voc_size, embed_dim, hidden_size, multiplier = 2, is_parent=False, dropout=0.0):
     super().__init__()
     self.is_parent = is_parent
 
-    self.embed = torch.nn.Embedding(num_embeddings=embed_size, embedding_dim=embed_dim)
+    self.embed = torch.nn.Embedding(num_embeddings=voc_size, embedding_dim=embed_dim)
     self.lstm_1 = torch.nn.LSTM(input_size=embed_dim, hidden_size=hidden_size, batch_first=True, bidirectional=True)
 
     if self.is_parent:
       self.lstm_2 = torch.nn.LSTM(input_size=embed_dim, hidden_size=hidden_size, batch_first=True, bidirectional=True)
     
-    self.linear = torch.nn.Linear(hidden_size * 4, 2) #because we have bidirectional lstm
-    self.dropout = torch.nn.Dropout(0.5)
+    self.linear = torch.nn.Linear(hidden_size * multiplier, 2) #because we have bidirectional lstm
+    self.dropout = torch.nn.Dropout(dropout)
 
   def encode(self, x, lstm):
     x = self.embed(x)

@@ -1,0 +1,11 @@
+#Training and main parameters which are applicable for many models:
+batch_size: 128
+start_lr: 1e-4 #1e-6 for transformer and 1e-4 for the LSTM model 
+weight_decay: 1e-5
+target_lr: None #4e-5 only for transformer 
+alpha: 0.1 
+epochs: 20 
+resume_from_checkpoint: False
+checkpoint_path: None #or any other name shall be pared with resume_from_checkpoint: True
+
+

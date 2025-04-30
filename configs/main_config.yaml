@@ -1,0 +1,11 @@
+defaults:
+  - _self_
+  - dataset
+  - model: lstm
+  - params
+  
+experiment_name: "sarcasm_classifier_parent"
+mode: train
+isTransformer: False #Change to true if you train transformer model
+
+#Note: So far my vectoriser takes care of the remove punc + add the emojis - turned out this is good.. its hardcoded in data_process.py
