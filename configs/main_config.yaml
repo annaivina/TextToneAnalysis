@@ -1,11 +1,11 @@
 defaults:
   - _self_
   - dataset
-  - model: lstm
+  - model: deberta #lstm, transformer or deberta 
   - params
   
 experiment_name: "sarcasm_classifier_parent"
 mode: train
-isTransformer: False #Change to true if you train transformer model
+isTransformer: False #Change to true if you train transformer model (only custom one)
 
 #Note: So far my vectoriser takes care of the remove punc + add the emojis - turned out this is good.. its hardcoded in data_process.py

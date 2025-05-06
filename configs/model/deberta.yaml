@@ -1,0 +1,11 @@
+name: deberta
+params:
+  isParent: False 
+  isDeberta: True
+  checkpoint: microsoft/deberta-v3-small
+  max_len: 143
+  num_labels: 2 #This is to create the classifier head
+  freeze_layers: True
+  freeze_layers_num: 3 #Deberta-v3-small has 6 layyers so we can unfreeze 3 layers (aka half)
+  use_mixed_prec: False
+  min_freq: None

@@ -1,11 +1,12 @@
 name: "transformer"
 params:
-  max_len: 145
+  max_len: 143
   min_freq: 2
-  embed_dim: 200
-  dense_dim: 512
-  num_heads: 10
+  embed_dim: 384
+  dense_dim: 256
+  num_heads: 12
   num_layers: 2
   dropout: 0.3
   isParent: False #False because this is not useful for transformers 
+  isDeberta: False
   clip_grad: True 

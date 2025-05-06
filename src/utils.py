@@ -38,6 +38,10 @@ def pair_comments(input_1, input_2):
     new_input.append(input_1[i] + " <SEP> " + input_2[i])
   return new_input
 
+def pair_comments_deberta(input_1, input_2):
+  return [f"Parent: {p} [SEP] Main: {m}" for p, m in zip(input_1, input_2)]
+
+
 
 def restart_from_ecpoch(cfg, model, optimizer, scheduler, logging, device):
   logging.info(f"Resuming training from checkpoint: {cfg.checkpoint_path}")

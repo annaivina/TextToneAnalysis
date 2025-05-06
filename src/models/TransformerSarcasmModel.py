@@ -12,7 +12,7 @@ class SarcasmTransformer(torch.nn.Module):
     self.linear = torch.nn.Sequential(torch.nn.Linear(embed_dim, dense_dim),
                                       torch.nn.ReLU(),
                                       torch.nn.Linear(dense_dim, 2))
-    self.max_pool = torch.nn.AdaptlsiveMaxPool1d(1)
+    self.max_pool = torch.nn.AdaptiveMaxPool1d(1)
     self.dropout = torch.nn.Dropout(dropout)
 
   def forward(self, x, mask = None):
