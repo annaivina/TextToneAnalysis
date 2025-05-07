@@ -103,9 +103,13 @@ Training/validation loss and accuracy for bi-LSTM model without parent comments
 
 Training/validation loss and accuracy for bi-LSTM model with parent comments + emojis 
 <p align="center">
-  <img src="./images/loss_accuracy_model2_al.png" alt="Loss and Accuracy" width="80%"/>
+  <img src="./images/loss_accuracy_model2_all.png" alt="Loss and Accuracy" width="80%"/>
 </p>
 
+
+We observed that the validation loss plateaued around epoch 17 for the model trained without parent comments, and around epoch 13 when parent comments were included, while training loss continued to decrease. This behavior indicates overfitting. Therefore, early stopping was applied to preserve generalization.
+
+The model could likely be improved further by tuning the embedding dimension or experimenting with a simpler LSTM architecture. These optimizations were left for future work. However, we estimate that such tuning would yield only a modest gain of 2–3% in accuracy, which may not justify the additional complexity in this context.
 ---
 
 ### Model 3: Custom Transformer Encoder
@@ -130,6 +134,12 @@ Validation Accuracy: **70%**
 (Training time: ~5 hours for 20 epochs --> 10x longer than LSTM for lower accuracy)
 
 
+Training/validation loss and accuracy for custom Transformer model with parent comments + emojis 
+<p align="center">
+  <img src="./images/loss_accruacy_model3.png" alt="Loss and Accuracy" width="80%"/>
+</p>
+
+The model begins to overfit after epoch 11, as indicated by the rising validation loss while training accuracy continues to improve. Therefore, early stopping with a patience of 3 was applied, resulting in a final validation accuracy of approximately 70%.
 ### Model 4: Transfer Learning with DeBERTa v3 (Hugging Face)
 
 DeBERTa v3 small was used for fine-tuning:
