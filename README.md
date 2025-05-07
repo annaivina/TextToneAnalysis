@@ -94,6 +94,18 @@ Validation Accuracy: **72.91%**
 2. **Contextual Input:** Combined main + parent comments. Two parallel Bi-LSTMs processed each, followed by concatenation --> Accuracy improved to **73.61%**
 3. **GloVe Embeddings:** Tried but yielded no improvement, likely due to Reddit's  (or general posts) unique language structure.
 
+Training/validation loss and accuracy for bi-LSTM model without parent comments 
+<p align="center">
+  <img src="./images/accuracy_model2.png" alt="Loss" width="45%"/>
+  <img src="./images/loss_model2.png" alt="Accuracy" width="45%"/>
+</p>
+
+
+Training/validation loss and accuracy for bi-LSTM model with parent comments + emojis 
+<p align="center">
+  <img src="./images/loss_accuracy_model2_al.png" alt="Loss and Accuracy" width="80%"/>
+</p>
+
 ---
 
 ### Model 3: Custom Transformer Encoder
