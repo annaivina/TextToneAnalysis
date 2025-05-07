@@ -36,7 +36,7 @@ Initial correlation analyses between features and sarcasm labels revealed that *
 | **Bi-LSTM**                  | Main comment                        | 72.91%   | Custom vectorizer + simple LSTM; strong trade-off of speed vs. accuracy |
 | **Bi-LSTM (Dual Input)**     | Main + parent comment               | 73.61%   | Context-aware; better than using main comment alone                   |
 | **Bi-LSTM + Emojis**         | Main + parent + emoji-aware vocab   | ~74.5%   | Slight improvement; kept emojis for future scalability                |
-| **Custom Transformer**       | Main + parent (with `[SEP]` token)  | 70.00%   | High training cost; didnât outperform LSTM due to data limitations |
+| **Custom Transformer**       | Main + parent (with `[SEP]` token)  | 70.00%   | High training cost; didnt' outperform LSTM due to data limitations |
 | **DeBERTa (Frozen)**         | Main + parent                       | 57.8%    | All layers frozen; underfitting likely                                |
 | **DeBERTa (Half Frozen)**    | Main + parent (small data)          | 76.0%    | Strong improvement from partial unfreezing                            |
 | **DeBERTa (Half + 800K)**    | Main + parent (full data)           | **78.0%**| Best accuracy, but long training time (1+ day)                        |
